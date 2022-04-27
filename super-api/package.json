@@ -1,0 +1,31 @@
+{
+  "name": "@aleygues/lc-typegraphql-typeorm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose -f docker-compose.dev.yml up --build",
+    "start": "tsnd src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "apollo-server": "^3.4.0",
+    "argon2": "^0.28.2",
+    "class-validator": "^0.13.1",
+    "graphql": "^15.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.38"
+  }
+}

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: ./super-client
+      dockerfile: ./dev.dockerfile
+    ports:
+      - 3000:3000
+  api:
+    build:
+      context: ./super-api
+      dockerfile: ./dev.dockerfile
+    ports:
+      - 4000:4000
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    # restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecure
+      MYSQL_DATABASE: wcs
+    volumes:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
