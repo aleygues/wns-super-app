@@ -21,5 +21,6 @@ FROM node:lts-alpine AS serve
 
 WORKDIR /app
 
-COPY --from=build /app/build /build
-CMD npx serve ./build
+RUN npm i -g serve
+COPY --from=build /app/build /app/build
+CMD serve ./build
