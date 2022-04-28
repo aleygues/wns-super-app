@@ -9,7 +9,6 @@ services:
       - 4000:4000
     volumes:
       - ./src:/app/src
-      - ./ormconfig.json:/app/ormconfig.json
     depends_on:
       db:
         condition: service_healthy
