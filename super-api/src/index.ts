@@ -10,6 +10,13 @@ const PORT = process.env.PORT || 4000;
 
 async function bootstrap() {
     // database connection, the config is loaded from ormconfig.json
+    console.log({
+        "host": process.env.MYSQL_HOST || "db",
+        "port": process.env.MYSQL_PORT ? Number(process.env.MYSQL_PORT) : 3306,
+        "username": process.env.MYSQL_USER || "root",
+        "password": process.env.MYSQL_PASSWORD || "supersecure",
+        "database": process.env.MYSQL_DATABASE || "wcs",
+    })
     await createConnection({
         "type": "mysql",
         "host": process.env.MYSQL_HOST || "db",
