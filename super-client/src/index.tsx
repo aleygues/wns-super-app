@@ -6,7 +6,7 @@ import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: 'http://127.0.0.1:4000',
+  uri: 'https://api.wns21.aleygues.fr',
 });
 
 const authLink = setContext((_, { headers }) => {
