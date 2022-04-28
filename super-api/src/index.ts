@@ -19,7 +19,7 @@ async function bootstrap() {
         "database": process.env.MYSQL_DATABASE || "wcs",
         "synchronize": true,
         "logging": true,
-        "entities": [
+        "entities": [ 
             "src/models/**/*.ts"
         ],
         "migrations": [
